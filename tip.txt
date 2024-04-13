@@ -1,0 +1,22 @@
+1. Train online
+
+2. Upload data.zip file to drive
+
+3. Ask friends and family for video if needed
+
+4. If training session stopped but hasn't reach last epoch, do model=last.pt and add resume=True to continue where you left of
+
+5. If you're training on Colab free, press F12, go to console, paste
+        function ClickConnect() {
+        console.log("Working"); 
+        document
+        .querySelector('#top-toolbar > colab-connect-button')
+        .shadowRoot.querySelector('#connect')
+        .click() 
+        }
+        setInterval(ClickConnect, 60000)  
+    This will stop Colab from killing the session even if you AFK.
+
+6. Don't auto save on colab folder, save your model frequently on Drive by adding project="Your path to save model" to the .train() method, check the ultralytics website for more info
+
+7. More data = more generalized model.
