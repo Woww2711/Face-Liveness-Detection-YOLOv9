@@ -12,6 +12,18 @@ This project aims to create a decent Face Liveness Detection model from [YOLOv9]
 - The 3 kinds of face are:
   + Replay: Images of faces from various people from many videos (0)
   + Real: Images of real faces (1)
-  + Mask: Images of people wearing human-like mask (2)
+  + Mask: Images of people wearing human-like mask or a mask (2)
 - Data collected from [kaggle](kaggle.com), most come from [Training Data](https://www.kaggle.com/trainingdatapro) and [zalo](https://www.kaggle.com/datasets/hlly34/liveness-detection-zalo-2022)
+- Guide can be found at [Face Liveness Detection](https://youtu.be/LqzPifvd09Q?si=8J1lmpr2wbDzrZ-h), go subscribe to his channel
 
+## Data
+Consists of 3807 images and 3807 text files, which sums up to 7164 files.
+- Real: 2870 files
+- Replay: 2938 files
+- Mask: 1806 files
+- 80% for training, 10% for validation, 10% for testing
+
+## Training
+Google Colab was used for training
+- 
+- GPU: T4 since it is free for some hours, took 3-4 days
