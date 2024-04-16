@@ -27,3 +27,7 @@ Consists of 3807 images and 3807 text files, which sums up to 7164 files.
 Google Colab was used for training
 - 
 - GPU: T4 since it is free for some hours, took 3-4 days
+- More to be updated
+
+## Deploy
+In progress...
