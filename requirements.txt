@@ -1,0 +1,10 @@
+# YOLOv9 requirements
+# Usage: pip install -r requirements.txt
+
+numpy>=1.18.5
+opencv-python
+Pillow>=7.1.2
+torch>=1.7.0
+torchvision>=0.8.1
+ultralytics
+streamlit
