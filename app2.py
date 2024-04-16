@@ -4,7 +4,7 @@ import cv2
 from PIL import Image
 
 
-modelPath = 'E:/Face Liveness Detector/best13042024.pt'
+modelPath = 'yolov9.pt'
 
 def main():
     # Page layout
