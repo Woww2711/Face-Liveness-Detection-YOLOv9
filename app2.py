@@ -95,13 +95,29 @@ def main():
                 annotated_frame = results[0].plot()
                 holder.image(annotated_frame,channels='BGR',width=cap.get(3))
     
-    def frame_process(frame):
-        frame = frame.to_ndarray(format="bgr24")
-        results = model.predict(frame,conf=confidence)
-        annotated_frame = results[0].plot()
-        return av.VideoFrame.from_ndarray(annotated_frame, format="bgr24")
-    if run:
-        webrtc_streamer(key="webcam", video_frame_callback=frame_process)
+    #### To run inference locally (frame by frame) ####
+    # def frame_process(frame):
+    #     frame = frame.to_ndarray(format="bgr24")
+    #     results = model.predict(frame,conf=confidence)
+    #     annotated_frame = results[0].plot()
+    #     return av.VideoFrame.from_ndarray(annotated_frame, format="bgr24")
+    # if webcam:
+    #     webrtc_streamer(key="example", 
+    #                     video_frame_callback=frame_process,
+    #                     media_stream_constraints={"video": True, "audio": False},
+    #                     sendback_audio = False)
+        
+    #### To run inference on app (picture) ####
+    if webcam:
+        col1, col2 = st.columns(2)
+        with col1:
+            picture = st.camera_input("Take a picture")
+            if picture is not None:
+                picture = Image.open(picture)
+                results = model.predict(picture,conf=confidence)
+                with col2:
+                    predicted_picture = results[0].plot()
+                    st.image(predicted_picture,channels='BGR',caption="Detected face(s)")
 
          
 if __name__ == '__main__':
