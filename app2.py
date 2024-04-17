@@ -26,7 +26,7 @@ def main():
             "Upload an image...", type=("jpg", "jpeg", "png", 'bmp', 'webp'))
         source_video = st.file_uploader(
             "Upload a video...", type=('mp4','mov'))
-        run = st.checkbox('Webcam')
+        webcam = st.checkbox('Webcam')
         st.markdown('---')
         # Model Options
         confidence = float(st.slider(
