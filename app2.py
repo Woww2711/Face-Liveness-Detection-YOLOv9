@@ -3,6 +3,8 @@ from ultralytics import YOLO
 import cv2
 from PIL import Image
 import torch
+from streamlit_webrtc import webrtc_streamer
+import av
 
 modelPath = 'yolov9.pt'
 
@@ -93,14 +95,14 @@ def main():
                 annotated_frame = results[0].plot()
                 holder.image(annotated_frame,channels='BGR',width=cap.get(3))
     
+    def frame_process(frame):
+        frame = frame.to_ndarray(format="bgr24")
+        results = model.predict(frame,conf=confidence)
+        annotated_frame = results[0].plot()
+        return av.VideoFrame.from_ndarray(annotated_frame, format="bgr24")
     if run:
-        FRAME_WINDOW = st.empty()
-        camera = cv2.VideoCapture(0)
-        while run:
-            _, frame = camera.read()
-            results = model.predict(frame,conf=confidence)
-            annotated_frame = results[0].plot()
-            FRAME_WINDOW.image(annotated_frame,channels='BGR')
+        webrtc_streamer(key="webcam", video_frame_callback=frame_process)
+
          
 if __name__ == '__main__':
     try:
