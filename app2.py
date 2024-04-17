@@ -2,7 +2,7 @@ import streamlit as st
 from ultralytics import YOLO
 import cv2
 from PIL import Image
-
+import torch
 
 modelPath = 'yolov9.pt'
 
@@ -41,7 +41,8 @@ def main():
 
     # Check model
     try:
-        model = YOLO(modelPath)
+        device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        model = YOLO(modelPath).to(device)
     except Exception as ex:
         st.error(
             f"Unable to load model. Check the specified path: {modelPath}")
