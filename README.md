@@ -28,7 +28,13 @@ Google Colab was used for training
 - GPU: T4 since it is free for some hours, took 4-5 days
 - epochs = 200, close_mosaic = 50, cache = True, everything else is set to default
 - Resume = True is used regularly
-- 
 
 ## Deploy
-In progress...
+Deploy using Streamlit
+- Link: https://face-liveness-detection-yolov9-2711.streamlit.app/
+- Inference speed is greatly reduced since Streamlit Cloud does not support GPU at the moment
+- Clone the repo and run locally if you want faster inference speed
+- On cloud, webcam input can only be one picture at a time
+- At local, the app can run inference frame by frame of the webcam
+- Image and video uploads work perfectly on both cloud and local
+
