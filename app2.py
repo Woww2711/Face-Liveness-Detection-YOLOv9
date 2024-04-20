@@ -6,7 +6,7 @@ import torch
 from streamlit_webrtc import webrtc_streamer
 import av
 
-modelPath = 'yolov9.pt'
+modelPath = 'yolov9_openvino_model/'
 
 def main():
     # Page layout
@@ -43,8 +43,7 @@ def main():
 
     # Check model
     try:
-        device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        model = YOLO(modelPath).to(device)
+        model = YOLO(modelPath)
     except Exception as ex:
         st.error(
             f"Unable to load model. Check the specified path: {modelPath}")
