@@ -5,6 +5,7 @@ numpy>=1.18.5
 torch
 torchvision
 ultralytics
+openvino
 opencv-python
 opencv-python-headless
 streamlit
