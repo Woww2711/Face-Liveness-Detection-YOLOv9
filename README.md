@@ -38,3 +38,7 @@ Deploy using Streamlit
 - At local, the app can run inference frame by frame of the webcam
 - Image and video uploads work perfectly on both cloud and local
 
+## To-do list
+- Resize input
+- Train better model, need more time and more data 
+
