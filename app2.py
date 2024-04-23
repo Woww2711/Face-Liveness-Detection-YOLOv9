@@ -53,10 +53,10 @@ def main():
         col1, col2 = st.columns(2,gap='large')
         with col1:
             uploaded_image = Image.open(source_img)
-            image_width, _ = uploaded_image.size
+            # image_width, _ = uploaded_image.size
             st.image(source_img,
                     caption="Uploaded Image",
-                    width=image_width
+                    width=640
                     )
         
     if st.sidebar.button('Detect Image'):
@@ -71,7 +71,7 @@ def main():
             with col2:
                 st.image(res_plotted,
                         caption='Detected Image',
-                        width=image_width                 
+                        width=640                
                         )
     
     if source_video is not None:
@@ -92,7 +92,7 @@ def main():
                     break
                 results = model.predict(frame,conf=confidence)
                 annotated_frame = results[0].plot()
-                holder.image(annotated_frame,channels='BGR',width=cap.get(3))
+                holder.image(annotated_frame,channels='BGR',width=640)
     
     #### To run inference locally (frame by frame) ####
     # def frame_process(frame):
