@@ -40,5 +40,7 @@ Deploy using Streamlit
 
 ## To-do list
 - Resize input
+- openvino
+- gelan model
 - Train better model, need more time and more data 
 
