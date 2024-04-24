@@ -26,7 +26,7 @@ Consists of 3807 images and 3807 text files, which sums up to 7164 files.
 ## Training
 Google Colab was used for training
 - GPU: T4 since it is free for some hours, took 4-5 days
-- epochs = 200, close_mosaic = 50, cache = True, everything else is set to default
+- epochs = 200, close_mosaic = 50, patience = 25, cache = True, everything else is set to default
 - Resume = True is used regularly
 
 ## Deploy
@@ -39,8 +39,5 @@ Deploy using Streamlit
 - Image and video uploads work perfectly on both cloud and local
 
 ## To-do list
-- Resize input
-- openvino
-- gelan model
 - Train better model, need more time and more data 
 
