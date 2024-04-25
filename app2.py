@@ -43,7 +43,7 @@ def main():
 
     # Check model
     try:
-        model = YOLO(modelPath)
+        model = YOLO(modelPath, task='detect')
     except Exception as ex:
         st.error(
             f"Unable to load model. Check the specified path: {modelPath}")
