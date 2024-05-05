@@ -39,5 +39,6 @@ Deploy using Streamlit
 - Image and video uploads work perfectly on both cloud and local
 
 ## To-do list
-- Train better model, need more time and more data 
+- Train better model, need more time and more data
+- Intergrate into eKYC system
 
