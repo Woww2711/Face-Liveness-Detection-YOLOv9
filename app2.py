@@ -67,12 +67,16 @@ def main():
                                 show_labels=False, 
                                 show_conf=False
                                 )
-            res_plotted = res[0].plot(labels=True, line_width=2)[:, :, ::-1]
+            res_plotted = res[0].plot(labels=True, line_width=int(image_width/250))[:, :, ::-1]
             with col2:
                 st.image(res_plotted,
                         caption='Detected Image',
                         width=480              
                         )
+                for box in res[0].boxes:
+                    class_id = int(box.cls)
+                    class_label = res[0].names[class_id]
+                    st.caption(f'Detected class: {class_label}')        
     
     if source_video is not None:
         col1, col2 = st.columns([0.3,0.7],gap='large')
@@ -85,14 +89,19 @@ def main():
     if st.sidebar.button('Detect Video'):
         with col2:
             cap = cv2.VideoCapture(vid)
-            holder = st.empty()
+            holder1 = st.empty()
+            holder2 = st.empty()
             while cap.isOpened():
                 success, frame = cap.read()
                 if not success:
                     break
                 results = model.predict(frame,conf=confidence)
                 annotated_frame = results[0].plot()
-                holder.image(annotated_frame,channels='BGR',width=640)
+                holder1.image(annotated_frame,channels='BGR',width=640)
+                for box in results[0].boxes:
+                    class_id = int(box.cls)
+                    class_label = results[0].names[class_id]
+                    holder2.caption(f'Detected class: {class_label}')
     
     #### To run inference locally (frame by frame) ####
     # def frame_process(frame):
@@ -117,8 +126,11 @@ def main():
                 with col2:
                     predicted_picture = results[0].plot()
                     st.image(predicted_picture,channels='BGR',caption="Detected face(s)")
+                    for box in results[0].boxes:
+                        class_id = int(box.cls)
+                        class_label = results[0].names[class_id]
+                        st.caption(f'Detected class: {class_label}')
 
-         
 if __name__ == '__main__':
     try:
         main()
