@@ -6,7 +6,7 @@ import torch
 from streamlit_webrtc import webrtc_streamer
 import av
 
-modelPath = 'yolov9_openvino_model/'
+modelPath = 'yolov9_openvino_model_best/'
 
 def main():
     # Page layout
