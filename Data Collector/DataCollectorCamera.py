@@ -1,6 +1,6 @@
 import cv2
-from time import time
 import cvzone
+from time import time
 from cvzone.FaceDetectionModule import FaceDetector
 
 # This python file is for collecting data with your camera/webcam
@@ -83,10 +83,14 @@ while ret:
                 h = int(h + offsetH * 3.5)
 
                 # ------  To avoid values below 0 --------
-                if x < 0: x = 0
-                if y < 0: y = 0
-                if w < 0: w = 0
-                if h < 0: h = 0
+                if x < 0: 
+                    x = 0
+                if y < 0: 
+                    y = 0
+                if w < 0: 
+                    w = 0
+                if h < 0: 
+                    h = 0
 
                 # ------  Find Blurriness --------
                 imgFace = img[y:y + h, x:x + w]
@@ -106,10 +110,14 @@ while ret:
                 # print(xcn, ycn, wn, hn)
 
                 # ------  To avoid values above 1 --------
-                if xcn > 1: xcn = 1
-                if ycn > 1: ycn = 1
-                if wn > 1: wn = 1
-                if hn > 1: hn = 1
+                if xcn > 1: 
+                    xcn = 1
+                if ycn > 1: 
+                    ycn = 1
+                if wn > 1: 
+                    wn = 1
+                if hn > 1: 
+                    hn = 1
 
                 listInfo.append(f"{classID} {xcn} {ycn} {wn} {hn}\n")
 
