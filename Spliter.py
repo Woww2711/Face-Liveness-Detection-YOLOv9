@@ -15,10 +15,10 @@ inputFolderPath = "Folder that contains all images you want the model to train o
 splitRatio = {"train": 0.8, "val": 0.1, "test": 0.1}
 classes = ["replay","real","mask"]
 
-try:
-    shutil.rmtree(outputFolderPath)
-except OSError as e:
-    os.mkdir(outputFolderPath)
+# try:
+#     shutil.rmtree(outputFolderPath)
+# except OSError as e:
+#     os.mkdir(outputFolderPath)
 
 # --------  Directories to Create -----------
 os.makedirs(f"{outputFolderPath}/train/images", exist_ok=True)

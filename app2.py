@@ -1,10 +1,10 @@
 import streamlit as st
-from ultralytics import YOLO
 import cv2
-from PIL import Image
 # import torch
-# from streamlit_webrtc import webrtc_streamer
 # import av
+from ultralytics import YOLO
+from PIL import Image
+# from streamlit_webrtc import webrtc_streamer
 
 modelPath = 'yolov9_openvino_model_best/'
 
