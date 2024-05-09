@@ -1,7 +1,7 @@
-import cv2
 import streamlit as st
 # import torch
 # import av
+import cv2
 from ultralytics import YOLO
 from PIL import Image
 # from streamlit_webrtc import webrtc_streamer

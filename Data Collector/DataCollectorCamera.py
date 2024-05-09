@@ -1,7 +1,7 @@
-import cv2
-import cvzone
 from cvzone.FaceDetectionModule import FaceDetector
 from time import time
+import cv2
+import cvzone
 
 # This python file is for collecting data with your camera/webcam
 

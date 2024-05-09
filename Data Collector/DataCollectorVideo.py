@@ -1,8 +1,8 @@
+from cvzone.FaceDetectionModule import FaceDetector
+from time import time
 import cv2
 import cvzone
 import os
-from cvzone.FaceDetectionModule import FaceDetector
-from time import time
 
 # This python file is for collecting data with existing videos
 
