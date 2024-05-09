@@ -3,6 +3,7 @@ import math
 import cv2
 import cvzone
 from ultralytics import YOLO
+
 # import time
 
 confidence = 0.6
