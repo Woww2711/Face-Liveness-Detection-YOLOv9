@@ -1,5 +1,5 @@
-import streamlit as st
 import cv2
+import streamlit as st
 # import torch
 # import av
 from ultralytics import YOLO
